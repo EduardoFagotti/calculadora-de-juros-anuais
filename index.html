@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+          .text {
+              border-radius: 5px;
+          }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            overflow: hidden;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100vw;
+            height: 100vh;
+            background-color: rgb(49, 49, 49);
+        }
+        .all{
+            color: aliceblue;
+            background-color: rgba(0, 0, 0, 0.514);
+            border-radius: 15px;
+            padding: 15px;
+            
+        }
+        output {
+            font-weight: bold;
+        }
+
+        #paymet {
+            text-decoration: underline;
+        }
+
+        #graph {
+           
+            margin-left: 60px;
+            border-radius: 10px;
+            background-color: aliceblue;
+            border: solid rgb(0, 0, 0) 1px;
+            
+        }
+        .top{
+            padding-bottom: 20px;
+        }
+        .bottcalcular{
+            border-radius:5px;
+            padding: 5px;
+            background-color:rgb(40, 101, 182);
+            color:aliceblue;
+        }
+
+        th,
+        td {
+            vertical-align: top;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+     <div class="container">
+        <div class="all">
+            <table>
+                <tr>
+                    <th class="top">Insira os dados do empréstimo</th>
+                    <td></td>
+                    <th >Saldo do empréstimo, patrimônio líquido acumulado e pagamento de juros </th>
+                </tr>
+                <tr>
+                    <td>Valor do empréstimo ($):</td>
+                    <td><input class="text" id="amount" onchange="calculate();"></td>
+                    <td rowspan=8>
+                        <canvas id="graph" width="400" height="250"></canvas>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Juro anual (%):</td>
+                    <td><input class="text" id="apr" onchange="calculate();"></td>
+                </tr>
+                <tr>
+                    <td>Período de reembolso (anos):</td>
+                    <td><input class="text" id="years" onchange="calculate();"></td>
+                <tr>
+                    <td>CEP (para encontrar credores):</td>
+                    <td><input class="text" id="zipcode" onchange="calculate();"></td>
+                <tr>
+                    <th>Pagamentos aproximados:</th>
+                    <td><button class="bottcalcular" onclick="calculate();">Calcular</button></td>
+                </tr>
+                <tr>
+                    <td>Pagamento mensal:</td>
+                    <td>$<span class="output" id="payment"></span></td>
+                </tr>
+                <tr>
+                    <td>Pagamento total:</td>
+                    <td>$<span class="output" id="total"></span></td>
+                </tr>
+                <tr>
+                    <td>Juros totais:</td>
+                    <td>$<span class="output" id="totalinterest"></span></td>
+                </tr>
+                
+                </tr>
+                </tr>
+            </table>
+         </div>
+     </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
